@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <title>左右淡入的企业介绍</title>
+
+        <link type="text/css" rel="stylesheet" href="css/animate.css" />
+
+    </head>
+
+    <body>
+
+        <div class="company">
+
+            <h2 class="company_name">上海世茂集团企业招聘</h2>
+
+            <h5 class="company_introduce">世茂集团，是以房地产开发为主的国际化企业集群，房地产界领袖企业之一。</h5>            
+
+        </div>    
+
+    </body>
+
+</html>
+<style>
+body{
+
+    overflow: hidden;  /*此处需要设置溢出隐藏，否则文字起始位移超过页面大小就会在页面下方出现横的滚动条*/
+
+}
+
+.company{
+
+    width: 400px;
+
+    margin: 0 auto;
+
+    border: 1px #999999 solid;
+
+}
+
+ 
+
+/*定义一个名字为lefteaseinAnimate动画，实现从页面的左边淡入页面效果*/
+
+@keyframes lefteaseinAnimate{
+
+    0%{ transform: translateX(-2000px); opacity: 0;}   /*在0%时设置文字在想X轴-2000px位移处（左边），透明度为0，也就是看不见文字*/
+
+    100%{ transform: translateX(0px); opacity: 1;}         /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+
+}
+
+@-webkit-keyframes lefteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}    
+
+}
+
+@-o-keyframes lefteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}    
+
+}
+
+@-ms-keyframes lefteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}    
+
+}
+
+@-moz-keyframes lefteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}    
+
+}
+
+.company_name{
+
+    animation: lefteaseinAnimate 1s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+
+    -webkit-animation: lefteaseinAnimate 1s ease 1;
+
+    -ms-animation: lefteaseinAnimate 1s ease 1;
+
+    -o-animation: lefteaseinAnimate 1s ease 1;
+
+    -moz-animation: lefteaseinAnimate 1s ease 1;
+
+     
+
+    /*规定动画的最后状态为结束状态*/
+
+    animation-fill-mode:forwards;
+
+    -webkit-animation-fill-mode: forwards;  
+
+      -o-animation-fill-mode: forwards; 
+
+      -ms-animation-fill-mode: forwards;   
+
+      -moz-animation-fill-mode: forwards; 
+
+}
+
+ 
+
+/*定义一个名字为righteaseinAnimate动画，实现从页面的右边淡入页面效果*/
+
+@keyframes righteaseinAnimate{
+
+    0%{ transform: translateX(2000px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+
+    100%{ transform: translateX(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+
+}
+
+@-webkit-keyframes righteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+
+}
+
+@-o-keyframes righteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+
+}
+
+@-ms-keyframes righteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+
+}
+
+@-moz-keyframes righteaseinAnimate{
+
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+
+}
+
+.company_introduce{
+
+    animation: righteaseinAnimate 1s ease 1;    /*调用已定义好的动画righteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+
+    -webkit-animation: righteaseinAnimate 1s ease 1;
+
+    -moz-animation: righteaseinAnimate 1s ease 1;
+
+    -ms-animation: righteaseinAnimate 1s ease 1;
+
+    -o-animation: righteaseinAnimate 1s ease 1;
+
+     
+
+    /*规定动画的最后状态为结束状态*/
+
+    animation-fill-mode:forwards;
+
+    -webkit-animation-fill-mode: forwards;  
+
+      -o-animation-fill-mode: forwards; 
+
+      -ms-animation-fill-mode: forwards;   
+
+      -moz-animation-fill-mode: forwards; 
+
+}

@@ -1,0 +1,23 @@
+:root {
+    --color: #FFFFFF;
+    --bg: #252429;
+    --after:#FF350D;
+}
+.news_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.news_title::after{
+    position:absolute;
+    content: ' ';
+    width: 100px;
+    height: 5px;
+    background-color: var(--after);
+    bottom: 0px;
+}
+.text_index{
+    text-indent:2em;
+    color:#353535
+}

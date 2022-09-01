@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./css/public.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css" as="style">
+    </html>
+    <title>企业站</title>
+</head>
+<script>
+    function handleClick () {
+       document.getElementById('icon').classList.remove('hidden')
+    }
+    function handelClons(){
+       document.getElementById('icon').classList.add('hidden')
+    }
+</script>
+
+<body>
+    <div class="relative">
+        <!-- 头部导航组件 -->
+        <nav id="hearder" class="header_conten w-full z-30 top-0 py-1">
+            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+                企业站
+                <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1 " id="menu">
+                    <nav>
+                        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                            <li class="active">
+                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
+                                    href="./index.html">首页</a>
+                            </li>
+                            <li>
+                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
+                                    href="./news.html">新闻列表页</a>
+                            </li>
+                            <li>
+                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
+                                    href="#">关于我们</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <label for="menu-toggle" class="cursor-pointer md:hidden block"  onclick="handleClick()">
+                    <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20">
+                        <title>menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    </svg>
+                </label>
+                <!-- <input class="hidden" type="checkbox" id="menu-toggle" /> -->
+               
+            </div>
+        </nav>
+        <div id="icon" class="h-screen  h-2/4 w-1/2 absolute top-0 right-0 bg-black z-50 hidden">
+            <div class="text-gray-300">
+                <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6" src="./img/close.png"/></div>
+                <div class="mx-4">
+                    <div class="flex flex-col-reverse divide-y divide-y-reverse divide-rose-400">
+                        <a class="block leading-10 py-8" href="./news.html">新闻列表页</a>
+                        <a class="block leading-10 py-8" href="#">关于我们</a>
+                        <a class="block leading-10 py-8 divide-y divide-yellow-500" href="./index.html">首页</a>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!-- 轮播组件 -->
+        <div class="banner">
+            <div class="app">
+                <div class="scroll">
+                    <!-- 图片展示 -->
+                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg" alt="scrollImage"
+                        class="img current">
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.6b21c09cb3426651884be95ea5ed484a?rik=jVHUGxj8GKvvzQ&riu=http%3a%2f%2fb.zol-img.com.cn%2fdesk%2fbizhi%2fstart%2f4%2f1392980276409.jpg&ehk=aKKsCzg3qxRsMXpgwkl7Q9fY7ZmDS2XM4jJCmMQGSj0%3d&risl=&pid=ImgRaw&r=0"
+                        alt="scrollImage" class="img">
+                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_23.jpg" alt="scrollImage"
+                        class="img">
+                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_6.jpg" alt="scrollImage"
+                        class="img">
+                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_0.jpg" alt="scrollImage"
+                        class="img">
+
+                    <!-- 左右箭头的展示 -->
+                    <div class="lf"></div>
+                    <div class="lr"></div>
+
+                    <!-- 小圆点展示 -->
+                    <div class="dots">
+                        <span class="square">
+                            <svg viewBox="0 0 54 54">
+                                <path class="path-loop-bg" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                                <path class="path-loop" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 54 54">
+                                <path class="path-loop-bg" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                                <path class="path-loop" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 54 54">
+                                <path class="path-loop-bg" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                                <path class="path-loop" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 54 54">
+                                <path class="path-loop-bg" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                                <path class="path-loop" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 54 54">
+                                <path class="path-loop-bg" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                                <path class="path-loop" d="M27,2A25,25,0,1,1,2,27,25,25,0,0,1,27,2"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <!-- 服务范围 -->
+            <div class="content_view h">
+                <div class="lg:flex">
+                    <div class="img-content-nav xl:container xl:w-2/6 sm:w-full xl:h-full p-4">
+                        <div class="nav-title xl:w-3/4 xl:pb-16 xl:text-4xl text-2xl leading-loose">服务范围</div>
+                        <div class="nav-content  xl:text-2xl  text-xl  xl:leading-10 leading-loose">
+                            <p>依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。
+                            </p><br />
+                            <p>全渠道零售方案包括B2C、O2O、B2B的场景，提供APP/小程序，支持对接饿了么、美团等第三方外卖平台，基于阿里巴巴多年沉淀的业务中台技术，建立商品、会员、交易、营销等共享服务中心，实现全渠道数据的共享和一致，帮助零售商打造线上、线下无差别的全渠道销售能力。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="images xl:container xl:w-8/12 sm:w-full xl:h-full">
+                        <div class="ps h-3/6">
+                            <img class="img_02 animation xl:container xl:w-1/5 xl:h-1/8" style="object-fit: cover;"
+                                src="./img/5F5EC72F-D2BD-4B4D-AF76-7E63A997A96B.png" alt="">
+                            <img class="img_03 animation xl:container xl:w-3/5 xl:h-full" style="object-fit: cover;"
+                                src="./img/DB710F41-D874-4C4C-8DE1-0C5367CB3E92.png" alt="">
+                        </div>
+                        <div class="ps1 flex">
+                            <img class="img_01 animation xl:h-96 xl:w-4/6" style="object-fit: cover;"
+                                src="./img/BCC67696-0D3D-4D0E-8550-BEF485B47F49.png" alt="">
+                            <img class="img_04 animation xl:max-w-md h-2/4" style="object-fit: cover;"
+                                src="./img/9628E7BE-DCE2-4876-A128-CCF28A1710FF.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 企业文化 -->
+            <div class="content_view bg-img h-0 xl:h-full">
+                <div class="cover p-20">
+                    <div class="cover_title text-4xl xl:pb-8">企业文化</div>
+                    <div class="cover_content xl:text-2xl pb-8 pt-10 xl:px-36">
+                        <p>
+                            作为中国专业的企业文化咨询公司，我们在生存和发展的历程中，也形成了自己经营管理个性和文化，我们的运营和发展都基于对这些文化涵盖的信念、信条和原则持之以恒、不折不扣地执行，所有公司的成员的所有行为均需与这些标准和原则保持高度统一。
+                        </p>
+                        <p>
+                            我们相信，企业的战略可以改变，领导可以更换，甚至文化的表现也要与时俱进，总之一切都可以调整，唯一能保持并引领我们的，只有我们的文化核心。只有信念的坚持才能带来企业的持续增长，只有统一的意志才能锻炼出优秀的队伍，总之只有文化才能使我们长青。
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 团队介绍 -->
+            <div class="introduce">
+                <div class="introduce_title overflow-hidden text-4xl pt-6 pb-6">
+                    <div class="title_text xl:pt-6 xl:pb-6">团队介绍</div>
+                </div>
+                <ul class="introduce_content  flex flex-wrap xl:mt-12">
+                    <li class="xl:flex-1 overflow-hidden">
+                        <img  class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/BA8A5675-AFCC-420D-AF18-BA7C654F513C.png" alt="加载失败">
+                        <div class="introduce_message">
+                            <div class="introduce_message_name text-4xl mb-10">Jon Smith</div>
+                            <div class="introduce_message_experience mb-5 text-xl">特级教师，从事教育工作10年</div>
+                            <div class="introduce_message_inf mb-40 text-xl">More information</div>
+                        </div>
+                    </li>
+                    <li class="xl:flex-1 overflow-hidden">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/D7B6AEA3-EA48-4E39-9C76-2EF5303B2913.png" alt="加载失败">
+                        <div class="introduce_message">
+                            <div class="introduce_message_name text-4xl mb-10">Merri Bond</div>
+                            <div class="introduce_message_experience mb-5 text-xl">特级教师，从事教育工作10年</div>
+                            <div class="introduce_message_inf mb-40 text-xl">More information</div>
+                        </div>
+                    </li>
+                    <li class="xl:flex-1 overflow-hidden">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/0BC740DF-311D-46BA-83F2-8A67E8495A88.png" alt="加载失败">
+                        <div class="introduce_message">
+                            <div class="introduce_message_name text-4xl mb-10">Samuel Fredman</div>
+                            <div class="introduce_message_experience mb-5 text-xl">特级教师，从事教育工作10年</div>
+                            <div class="introduce_message_inf mb-40 text-xl">More information</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 新闻动态 -->
+            <div class="news pb-10">
+                <div class="news_title text-4xl xl:pt-16 xl:pb-6">
+                    <div class="news_text xl:pt-6 pt-6 pb-6 xl:pb-6">新闻动态</div>
+                </div>
+                <ul class="news_content flex flex-wrap xl:mt-11 xl:pb-10 mt-4">
+                    <li class="xl:w-1/6 w-2/5 overflow-hidden">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/1682721B-7680-4E63-9868-775E15F62E23.png" alt="加载失败">
+                        <div class="news_content_message">
+                            <div class="my-5 xl:text-xl text-base">2022百度AI大会前夕，解读百度大脑的半年“豹变”</div>
+                            <div class="text-sm">
+                                Facebook为未来的VR社交打造了一款逼真的虚拟头像系统，该系统的特点是，利用数百颗摄像头对人脸进行动作捕捉，并能生成与人脸相似度很高的虚拟头像，这些头像还能模仿人脸的大量表情。
+                            </div>
+                        </div>
+                    </li>
+                    <li class="xl:w-1/6 w-2/5 overflow-hidden">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/1D6C875E-FB08-44A8-BC3B-BB20C13667A7.png" alt="加载失败">
+                        <div class="news_content_message">
+                            <div class="my-5 xl:text-xl text-base">创投早报｜美国商业化核聚变创企获投；音乐版权公司完成融资</div>
+                            <div class="text-sm">
+                                举办第六届中华印制大奖颁奖典礼、亚洲印刷展览联盟会议、国家主题日等多场专业、先进、丰富的同期活动，全面把握产业趋势与动态，共同探讨印刷业现状和未来。</div>
+                        </div>
+                    </li>
+                    <li class="xl:w-1/6 w-2/5 overflow-hidden">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/7F38306A-49D7-4F63-99BB-E742A47C9333.png" alt="加载失败">
+                        <div class="news_content_message">
+                            <div class="my-5 xl:text-xl text-base">【千龙网】广告行业标准指导性意见将出台</div>
+                            <div class="text-sm">
+                                国际印刷工业发展论坛由中国印刷及设备器材工业协会主办，始创于2005年，四年一届，已成功举办三届，每届论坛选择5-6个发达国家和5-6个发展中国家印刷协会的主席或总裁发表演讲
+                            </div>
+                        </div>
+                    </li>
+                    <li class="xl:w-1/6 w-2/5 overflow-hidden">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/1E2B21D7-3ACC-4C47-B236-9C0CE8BBC52D.png" alt="加载失败">
+                        <div class="news_content_message">
+                            <div class="my-5 xl:text-xl text-base">支持触觉反馈，Manus VR推出全新Prime VR手套</div>
+                            <div class="text-sm">第三届国际印刷工业发展论坛（Forum-PI
+                                2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-top md:flex flex-wrap pt-10">
+                <div class="md:w-1/4 px-4 md:text-center">地址：中国山东省青岛市市南区某某中路20号</div>
+                <div class="md:w-1/4 px-4 md:text-center">邮箱：1370XXX171@qq.com</div>
+                <div class="md:w-1/4 px-4 md:text-center">电话：0591-88888888</div>
+            </div>
+            <div class="footer-bottom flex pt-10 pb-6">
+                <div class="px-2 w-1/6 xl:w-1/3 flex justify-end"><img
+                        src="./img/911B38D2-D3A0-490A-893D-B5743077E0CD.png" alt=""></div>
+                <div class="w-5/6 xl:w-1/2">Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有
+                    陕ICP备xxxxxxx号</div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="./js/swiper.min.js"></script> -->
+    <script src="./js/anime.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

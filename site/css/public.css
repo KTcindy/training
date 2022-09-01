@@ -1,0 +1,83 @@
+*,
+html,
+body,a {
+    font-family: 'Microsoft YaHei UI';
+  max-width: 1920px;
+  overflow-y: auto;
+  text-decoration: none;
+}
+
+:root {
+    --color: #FFFFFF;
+    --bg: #252429;
+    --after:#FF350D;
+}
+
+.header_conten {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .5s ease;
+    z-index: 99;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 15px;
+    background-color: transparent;
+    background: #252429;
+    overflow-y: hidden;
+    /* opacity: 0.8; */
+    color:var(--color)
+}
+.active {
+    position: relative;
+}
+.active::after{
+    position: absolute;
+    content: ' ';
+    width: 50px;
+    height: 2px;
+    background-color: var(--after);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+.scroll-theme{
+    background-color: rgba(0,0,0,.85);
+}
+.header_title {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.size-color {
+    color: var(--color);
+}
+#menu a{
+    color: var(--color);
+}
+/* 底部 */
+.footer{
+    background-color:var(--after);
+    color:var(--color)
+}
+.footer .footer-top{
+    justify-content: center;
+    
+}
+.footer .footer-bottom{
+    /* justify-content: center; */
+    align-items: center;
+}
+.footer .footer-bottom img{
+    width: 50px;
+    height: 50px;
+}
+@media only screen and (amx-width: 1280px) {
+    body {
+        overflow-y: auto;
+    }
+  }
