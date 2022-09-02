@@ -1,0 +1,61 @@
+#pagenation {
+    text-align: center;
+    margin: 20px;
+}
+
+#pagenation [class$=_pager] {
+    user-select: none;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#pagenation button,
+#pagenation li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 4px;
+    height: 28px;
+    line-height: 28px;
+    border: none;
+    margin: 0 5px;
+    background-color: #f4f4f5;
+    color: #606266;
+    min-width: 30px;
+    border-radius: 2px;
+}
+
+#pagenation button:disabled {
+    color: #c0c4cc;
+    cursor: not-allowed;
+}
+
+#pagenation li:hover {
+    color: #409EFF;
+}
+
+#pagenation .number.active_page {
+    background-color: #409EFF;
+    color: #fff;
+    cursor: default;
+}
+
+#pagenation li.btn-quicknext,
+#pagenation li.btn-quickprev {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+#pagenation li.btn-quicknext.active_page,
+#pagenation li.btn-quickprev.active_page {
+    font-size: 12px;
+    letter-spacing: -2px;
+    line-height: 26px;
+}

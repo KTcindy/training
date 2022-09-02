@@ -12,9 +12,11 @@
     <title>企业站</title>
 </head>
 <script>
+    // 移除显示
     function handleClick () {
        document.getElementById('icon').classList.remove('hidden')
     }
+    // 添加隐藏
     function handelClons(){
        document.getElementById('icon').classList.add('hidden')
     }
@@ -39,7 +41,7 @@
                             </li>
                             <li>
                                 <a class="inline-block no-underline hover:text-black  py-2 px-4"
-                                    href="#">关于我们</a>
+                                    href="./personalCenter.html">关于我们</a>
                             </li>
 
                         </ul>
@@ -62,7 +64,7 @@
                 <div class="mx-4">
                     <div class="flex flex-col-reverse divide-y divide-y-reverse divide-rose-400">
                         <a class="block leading-10 py-8" href="./news.html">新闻列表页</a>
-                        <a class="block leading-10 py-8" href="#">关于我们</a>
+                        <a class="block leading-10 py-8" href="./personalCenter.html">关于我们</a>
                         <a class="block leading-10 py-8 divide-y divide-yellow-500" href="./index.html">首页</a>
                       </div>
                 </div>
@@ -127,9 +129,9 @@
         <div class="content">
             <!-- 服务范围 -->
             <div class="content_view h">
-                <div class="lg:flex">
+                <div class="lg:flex py-4">
                     <div class="img-content-nav xl:container xl:w-2/6 sm:w-full xl:h-full p-4">
-                        <div class="nav-title xl:w-3/4 xl:pb-16 xl:text-4xl text-2xl leading-loose">服务范围</div>
+                        <div class="nav-title xl:w-3/4 xl:pt-16 xl:pb-4 xl:text-4xl text-2xl leading-loose">服务范围</div>
                         <div class="nav-content  xl:text-2xl  text-xl  xl:leading-10 leading-loose">
                             <p>依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。
                             </p><br />
@@ -138,16 +140,16 @@
                         </div>
                     </div>
                     <div class="images xl:container xl:w-8/12 sm:w-full xl:h-full">
-                        <div class="ps h-3/6">
-                            <img class="img_02 animation xl:container xl:w-1/5 xl:h-1/8" style="object-fit: cover;"
+                        <div class="ps my-7 h-2/5">
+                            <img class="img_02 animation xl:container xl:w-1/5 xl:h-1/8 w-3/12" style="object-fit: cover;"
                                 src="./img/5F5EC72F-D2BD-4B4D-AF76-7E63A997A96B.png" alt="">
-                            <img class="img_03 animation xl:container xl:w-3/5 xl:h-full" style="object-fit: cover;"
+                            <img class="img_03 animation xl:container xl:w-3/5 w-6/12 xl:h-96" style="object-fit: cover;"
                                 src="./img/DB710F41-D874-4C4C-8DE1-0C5367CB3E92.png" alt="">
                         </div>
-                        <div class="ps1 flex">
-                            <img class="img_01 animation xl:h-96 xl:w-4/6" style="object-fit: cover;"
+                        <div class="ps1  my-7 flex">
+                            <img class="img_01 animation xl:h-96 xl:w-4/6 w-3/5" style="object-fit: cover;"
                                 src="./img/BCC67696-0D3D-4D0E-8550-BEF485B47F49.png" alt="">
-                            <img class="img_04 animation xl:max-w-md h-2/4" style="object-fit: cover;"
+                            <img class="img_04 animation xl:max-w-md h-2/4 w-2/5" style="object-fit: cover;"
                                 src="./img/9628E7BE-DCE2-4876-A128-CCF28A1710FF.png" alt="">
                         </div>
                     </div>
@@ -155,7 +157,7 @@
 
             </div>
             <!-- 企业文化 -->
-            <div class="content_view bg-img h-0 xl:h-full">
+            <div class="content_view bg-img hidden xl:block xl:h-full">
                 <div class="cover p-20">
                     <div class="cover_title text-4xl xl:pb-8">企业文化</div>
                     <div class="cover_content xl:text-2xl pb-8 pt-10 xl:px-36">
@@ -171,7 +173,7 @@
             </div>
             <!-- 团队介绍 -->
             <div class="introduce">
-                <div class="introduce_title overflow-hidden text-4xl pt-6 pb-6">
+                <div class="introduce_title overflow-hidden text-4xl pt-6 pb-6 mb-8">
                     <div class="title_text xl:pt-6 xl:pb-6">团队介绍</div>
                 </div>
                 <ul class="introduce_content  flex flex-wrap xl:mt-12">
@@ -204,7 +206,9 @@
             <!-- 新闻动态 -->
             <div class="news pb-10">
                 <div class="news_title text-4xl xl:pt-16 xl:pb-6">
-                    <div class="news_text xl:pt-6 pt-6 pb-6 xl:pb-6">新闻动态</div>
+                    <div class="relative bgimg">
+                        <div class="news_text xl:pt-6 pt-6 pb-6 xl:pb-6">新闻动态</div>
+                     </div>
                 </div>
                 <ul class="news_content flex flex-wrap xl:mt-11 xl:pb-10 mt-4">
                     <li class="xl:w-1/6 w-2/5 overflow-hidden">

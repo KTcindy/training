@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./css/public.css" rel="stylesheet">
+    <link href="./css/news.css" rel="stylesheet">
+    <!-- <script src="https://map.qq.com/api/gljs?v=1.exp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"></script> -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"></script>
+
+</html>
+<title>企业站</title>
+</head>
+<script>
+    // 显示隐藏
+    function handleClick () {
+        document.getElementById('icon').classList.remove('hidden')
+    }
+    // 显示
+    function handelClons () {
+        document.getElementById('icon').classList.add('hidden')
+    }
+
+</script>
+
+
+<body>
+    <div class="xl:relative">
+        <!-- 头部导航组件 -->
+        <nav id="hearder" class="header_conten w-full z-30 top-0 py-1">
+            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+                企业站
+                <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1 " id="menu">
+                    <nav>
+                        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                            <li>
+                                <a class="inline-block no-underline hover:text-black  py-2 px-4 "
+                                    href="./index.html">首页</a>
+                            </li>
+                            <li>
+                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
+                                    href="./news.html">新闻列表页</a>
+                            </li>
+                            <li class="active">
+                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
+                                    href="./personalCenter.html">关于我们</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <label for="menu-toggle" class="cursor-pointer md:hidden block" onclick="handleClick()">
+                    <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20">
+                        <title>menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    </svg>
+                </label>
+
+            </div>
+        </nav>
+        <!-- 抽屉 -->
+        <div id="icon" class="h-screen  h-2/4 w-1/2 absolute top-0 right-0 bg-black z-50 hidden">
+            <div class="text-gray-300">
+                <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6"
+                        src="./img/close.png" /></div>
+                <div class="mx-4">
+                    <div class="flex flex-col-reverse divide-y divide-y-reverse divide-rose-400">
+                        <a class="block leading-10 py-8" href="./news.html">新闻列表页</a>
+                        <a class="block leading-10 py-8" href="./personalCenter.html">关于我们</a>
+                        <a class="block leading-10 py-8 divide-y divide-yellow-500" href="./index.html">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--关于我们 -->
+        <div class="content">
+            <div class="news_title person text-4xl md:h-32 h-12 my-4 pb-4">关于我们</div>
+            <div class="xl:w-11/12 m-auto  flex-wrap flex xl:m-20">
+                <div class="xl:w-6/12 w-full h-96 xl:p-4">
+                    <div id="container" class="w-full h-full"></div>
+                </div>
+                <div class="xl:w-6/12 p-4">
+                    <h4 class="font-semibold text-xl pt-4 pb-4">一家专注系统高端定制开发的公司</h4>
+                    <div class="xl:text-lg leading-8 pb-8">
+                        <p>互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。</p>
+                        <p>互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。</p>
+                        <p>我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。
+                        </p>
+                    </div>
+                    <div>
+                        <div class="xl:text-base text-base flex pb-4">
+                            <img class="w-5 " src="./img/local.png" alt="">&nbsp
+                            <p>地址：中国山东省青岛市市南区某某中路20号</p>
+                        </div>
+                        <div class="xl:text-base text-base flex pb-4">
+                            <img class="w-5" src="./img/0009EA83-D4B7-497E-9458-32D6CA2AF1CA.png" alt="">&nbsp
+                            <p>邮箱：1370XXX171@qq.com</p>
+                        </div>
+                        <div class="xl:text-base text-base flex pb-4">
+                            <img class="w-5" src="./img/73366265-D302-4EF8-BC5E-1872ADD93CEB.png" alt="">&nbsp
+                            <p>电话：0591-88888888</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer xl:absolute xl:-bottom-auto w-full">
+            <div class="footer-top md:flex flex-wrap pt-10">
+                <div class="md:w-1/4 px-4 md:text-center">地址：中国山东省青岛市市南区某某中路20号</div>
+                <div class="md:w-1/4 px-4 md:text-center">邮箱：1370XXX171@qq.com</div>
+                <div class="md:w-1/4 px-4 md:text-center">电话：0591-88888888</div>
+            </div>
+            <div class="footer-bottom flex pt-6 pb-6">
+                <div class="px-2 w-1/6 xl:w-1/3 flex justify-end"><img
+                        src="./img/911B38D2-D3A0-490A-893D-B5743077E0CD.png" alt=""></div>
+                <div class="w-5/6 xl:w-1/2">Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有
+                    陕ICP备xxxxxxx号</div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var center = new qq.maps.LatLng(26.053118,119.241208);
+        var map = new qq.maps.Map(document.getElementById('container'), {
+            center: center,
+            zoom: 22
+        });
+        var label = new qq.maps.Label({
+            position: center,
+            map: map,
+            content: '特力林科技大厦'
+        });
+        var cssC={color:"#000",fontSize:"16px",fontWeight:"bold",padding:'10px','offset': {
+                    x: 85,
+                    y: 150
+                }};
+        label.setStyle(cssC);
+    </script>
+</body>
+
+</html>

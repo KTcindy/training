@@ -8,17 +8,21 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="./css/public.css" rel="stylesheet">
     <link href="./css/news.css" rel="stylesheet">
-    </html>
-    <title>企业站</title>
+    <link href="./css/pagenaation.css" rel="stylesheet">
+    <script src="./js/pagen.js"></script>
+
+</html>
+<title>企业站</title>
 </head>
 <script>
     function handleClick () {
-       document.getElementById('icon').classList.remove('hidden')
+        document.getElementById('icon').classList.remove('hidden')
     }
-    function handelClons(){
-       document.getElementById('icon').classList.add('hidden')
+    function handelClons () {
+        document.getElementById('icon').classList.add('hidden')
     }
 </script>
+
 <body>
     <div>
         <!-- 头部导航组件 -->
@@ -38,7 +42,7 @@
                             </li>
                             <li>
                                 <a class="inline-block no-underline hover:text-black  py-2 px-4"
-                                    href="#">关于我们</a>
+                                    href="./personalCenter.html">关于我们</a>
                             </li>
 
                         </ul>
@@ -51,19 +55,20 @@
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                     </svg>
                 </label>
-                
+
             </div>
         </nav>
         <!-- 抽屉 -->
         <div id="icon" class="h-screen  h-2/4 w-1/2 absolute top-0 right-0 bg-black z-50 hidden">
             <div class="text-gray-300">
-                <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6" src="./img/close.png"/></div>
+                <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6"
+                        src="./img/close.png" /></div>
                 <div class="mx-4">
                     <div class="flex flex-col-reverse divide-y divide-y-reverse divide-rose-400">
                         <a class="block leading-10 py-8" href="./news.html">新闻列表页</a>
-                        <a class="block leading-10 py-8" href="#">关于我们</a>
+                        <a class="block leading-10 py-8" href="./personalCenter.html">关于我们</a>
                         <a class="block leading-10 py-8 divide-y divide-yellow-500" href="./index.html">首页</a>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,9 +76,12 @@
         <div class="content">
             <div class="news_title text-4xl md:h-40 h-20">新闻列表页</div>
             <div class="post-content bg-teal-500 flex flex-wrap xl:px-24  lg:bg-teal-500">
-                <a href="./NewsDetailsPage.html" target="_blank" class="ease-in-out block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="ease-in-out block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -82,9 +90,12 @@
                             国际印刷工业发展论坛由中国印刷及设备器材工业协会主办，始创于2005年，四年一届，已成功举办三届，每届论坛选择5-6个发达国家和5-6个发展中国家印刷协会的主席或总裁发表演讲</p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/4">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/4">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -94,9 +105,12 @@
                         </p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -105,9 +119,12 @@
                             举办第六届中华印制大奖颁奖典礼、亚洲印刷展览联盟会议、国家主题日等多场专业、先进、丰富的同期活动，全面把握产业趋势与动态，共同探讨印刷业现状和未来。</p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src=" ./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src=" ./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -116,9 +133,12 @@
                             国际印刷工业发展论坛由中国印刷及设备器材工业协会主办，始创于2005年，四年一届，已成功举办三届，每届论坛选择5-6个发达国家和5-6个发展中国家印刷协会的主席或总裁发表演讲</p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -127,9 +147,12 @@
                             2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、</p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -138,9 +161,12 @@
                             2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、</p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -149,9 +175,12 @@
                             2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、</p>
                     </div>
                 </a>
-                <a href="./NewsDetailsPage.html" target="_blank" class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
+                <a href="./NewsDetailsPage.html" target="_blank"
+                    class="block block-ds h-full p-4 sm:w-1/2 md:w-1/4 xl:1/2">
                     <div class="img-wrap overflow-hidden">
-                        <img id="img" class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
+                        <img id="img"
+                            class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/9F27B6F4-AE35-4E04-90A1-5C29FEA20C59.png"
                             data-src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                     </div>
                     <div class="content_message">
@@ -160,6 +189,10 @@
                             2013）于2013年5月13日在北京举行，主办方邀请了来自中国、美国、德国、英国、意大利、日本、澳大利亚、俄罗斯、印度、印尼、南非、巴西、</p>
                     </div>
                 </a>
+            </div>
+            <div>
+                <div id="pagenation"></div>
+                <!-- <button id="test">change-size-test</button> -->
             </div>
         </div>
         <div class="footer">
@@ -169,9 +202,10 @@
                 <div class="md:w-1/4 px-4 md:text-center">电话：0591-88888888</div>
             </div>
             <div class="footer-bottom flex pt-6 pb-6">
-                <div class="px-2 w-1/6 xl:w-1/3 flex justify-end"><img src="./img/911B38D2-D3A0-490A-893D-B5743077E0CD.png"
-                        alt=""></div>
-                <div class="w-5/6 xl:w-1/2">Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有 陕ICP备xxxxxxx号</div>
+                <div class="px-2 w-1/6 xl:w-1/3 flex justify-end"><img
+                        src="./img/911B38D2-D3A0-490A-893D-B5743077E0CD.png" alt=""></div>
+                <div class="w-5/6 xl:w-1/2">Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有
+                    陕ICP备xxxxxxx号</div>
             </div>
         </div>
     </div>
@@ -211,10 +245,28 @@
                 lazyload()
             }, 300)
         };
-        // 监听Scroll事件，为了防止频繁调用，使用防抖函数进行优化
+        // 监听Scroll事件，为了防止频繁调用，使用防抖函数
         window.addEventListener("scroll", debounce(lazyload, 300));
         // 浏览器窗口大小改变时重新计算
         window.addEventListener("resize", debounce(lazyload, 300));
+
+
+        // 分页
+            var pagenation = new Pagenation({ 
+                wrap: document.getElementById('pagenation'), //容器
+                page: 1, //当前页,初始为1 
+                size: 1, //页面条数,8
+                callback: function (page) {
+                    ajaxtest()
+                }
+            });
+
+            function ajaxtest () {
+                console.log('页码：', pagenation.page);
+                pagenation.changeTotal(10);
+            }
+         ajaxtest()
+</script>
     </script>
 </body>
 

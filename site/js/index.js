@@ -35,7 +35,7 @@ window.addEventListener('load', function() {
     // 左箭头的点击事件，点击了就返回前一张图片 
     // 如果当前图片为第一张那么需要更换到最后一张图片也就是第四张
     leftArrow.addEventListener('click', function () {
-        clearInterval(timer)
+        // clearInterval(timer)
         
         if (currentIndex > 0) {
             imgs[currentIndex].classList.remove('current');
@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
     var timer = this.setInterval(changeImage, 5000);
  
     function changeImage () {
-        clearInterval(timer)
+        // clearInterval(timer)
         if (currentIndex < 4) {
             imgs[currentIndex].classList.remove('current');
             dots[currentIndex].classList.remove('square');
@@ -122,7 +122,8 @@ function getAnimation (target,add) {
 }
 window.addEventListener('scroll', function () {
     if (getTop() >= 600) {
-        var sUserAgent = navigator.userAgent;
+        // 此处特殊处理移动端 动画效果
+        var sUserAgent = navigator.userAgent; 
         if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
             return
         }
@@ -132,6 +133,7 @@ window.addEventListener('scroll', function () {
             duration: 500,
         });
     }
+    console.log(getTop())
     if (getTop() >= 1900) {
         // 团队介绍
         getAnimation('title_text', 'introduce-animation')

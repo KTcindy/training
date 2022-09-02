@@ -3,7 +3,7 @@ html,
 body,a {
     font-family: 'Microsoft YaHei UI';
   max-width: 1920px;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   text-decoration: none;
 }
 
