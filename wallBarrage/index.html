@@ -25,19 +25,22 @@
     </div>
     <script>
         $( function(){
-            // 获取随机颜色
+            /*
+                @colorMethods: 获取随机颜色
+            */
             function colorMethods(){
                 return "#"+(function(color){
                     return new Array(7-color.length).join("0")+color;
                 })((Math.random() * 0x1000000 | 0).toString(16));
 		    }
-            // 添加dom
+
             $('.add').click(function(){
+                const RIGHT=80; //设置默认偏移值
+                const TIME=8000; //设置指定时间偏移秒
                 //获取输入值
                 let val= $('.input').val();
                 //清空上次的value值
                 $('.input').val('')
-                // 创建dom
                 let $content = $('<div class="text">' + val + '</div>');
                 // 寻找到弹幕的容器
                 $screen = $(document.getElementById("wall"));
@@ -46,15 +49,15 @@
                 // 给生成的dom 添加每次要移动的位置
                 $content.css({
                     top: top + "px",
-                    right: 80,
+                    right: RIGHT,
                     color:colorMethods()
                 });
                 // 把生成的这个dom set到指定容器内
                 $('.dom').append($content);
-                //调用animate动画属性进行每8秒移动一次
+                //调用animate动画属性进行每指定秒移动一次
                 $content.animate({
                     right: $screen.width()+80-$content.width()
-                }, 8000, function() {
+                }, TIME, function() {
                     $(this).remove();
                 });
             })

@@ -8,54 +8,17 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="./css/public.css" rel="stylesheet">
     <link href="./css/news.css" rel="stylesheet">
-
+    <script src="./js/public.js"></script>
     <title>企业站</title>
 </head>
-<script>
-    function handleClick () {
-        document.getElementById('icon').classList.remove('hidden')
-    }
-    function handelClons () {
-        document.getElementById('icon').classList.add('hidden')
-    }
-</script>
 
 <body>
     <div>
         <!-- 头部导航组件 -->
         <nav id="hearder" class="header_conten w-full z-30 top-0 py-1">
-            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
-                企业站
-                <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1 " id="menu">
-                    <nav>
-                        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                            <li>
-                                <a class="inline-block no-underline hover:text-black  py-2 px-4 "
-                                    href="./index.html">首页</a>
-                            </li>
-                            <li>
-                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
-                                    href="./news.html">新闻列表页</a>
-                            </li>
-                            <li class="active">
-                                <a class="inline-block no-underline hover:text-black  py-2 px-4" href="./personalCenter.html">关于我们</a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-                <label for="menu-toggle" class="cursor-pointer md:hidden block" onclick="handleClick()">
-                    <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 20 20">
-                        <title>menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                    </svg>
-                </label>
-
-            </div>
         </nav>
         <!-- 抽屉 -->
-        <div id="icon" class="h-screen  h-2/4 w-1/2 absolute top-0 right-0 bg-black z-50 hidden">
+        <div id="icon" class="h-screen  h-2/4 w-1/2 absolute xl:hidden top-0 right-0 bg-black z-50 hidden">
             <div class="text-gray-300">
                 <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6"
                         src="./img/close.png" /></div>
@@ -68,14 +31,14 @@
                 </div>
             </div>
         </div>
-        <div class="content">
+        <div class="content mt-20">
             <div class="news_title news_detail text-4xl md:h-40 h-20">新闻详情页</div>
             <div class="mt-4 mb-4 w-11/12 xl:mt-8 m-auto">
                 <div>
-                    <img src="./img/0DEABDE5-F961-463C-989B-E678EA1F65FA.png" alt="">
+                    <img src="./img/0DEABDE5-F961-463C-989B-E678EA1F65FA.png" alt="加载失败">
                 </div>
                 <div class="mt-8">
-                    <h3 class="text-xl text-center font-semibold mb-4 xl:text-3xl">把小我融入大我，立志作出我们这一代人的历史贡献</h3>
+                    <h3 class="text-xl  text-center font-semibold mb-4 xl:text-3xl" id="newsTitle">把小我融入大我，立志作出我们这一代人的历史贡献</h3>
                     <h6 class="text-sm text-center text-gray-500">2022年05月24日 11:35　来源：人民日报</h6>
                     <div class="mt-4 font_size">
                         <strong>把小我融入大我，立志作出我们这一代人的历史贡献(践行嘱托十年间)</strong>
@@ -97,20 +60,25 @@
             </div>
             
         </div>
-        <div class="footer">
-            <div class="footer-top md:flex flex-wrap pt-10">
-                <div class="md:w-1/4 px-4 md:text-center">地址：中国山东省青岛市市南区某某中路20号</div>
-                <div class="md:w-1/4 px-4 md:text-center">邮箱：1370XXX171@qq.com</div>
-                <div class="md:w-1/4 px-4 md:text-center">电话：0591-88888888</div>
-            </div>
-            <div class="footer-bottom flex pt-10 pb-6">
-                <div class="px-2 w-1/6 xl:w-1/3 flex justify-end"><img
-                        src="./img/911B38D2-D3A0-490A-893D-B5743077E0CD.png" alt=""></div>
-                <div class="w-5/6 xl:w-1/2">Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有
-                    陕ICP备xxxxxxx号</div>
-            </div>
+        <div class="footer" id="footer">
         </div>
     </div>
+    <script>
+         window.onload=function(){
+            // 获取新闻标题
+            let title=document.getElementById('newsTitle')
+            https('GET',"./js/dataJson.json").then(res=>{
+                let id=location.search.slice(1).split('=').at(-1)
+                let data=res.data.find(item=>item.id==id)
+                title.innerHTML=data.title
+            })
+            //插入 头、尾 dom
+            const domHeader=document.getElementById('hearder')
+            domHeader.innerHTML=header('news')
+            const domFooter=document.getElementById('footer')
+            domFooter.innerHTML=footer()
+        }
+    </script>
 </body>
 
 </html>

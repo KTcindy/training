@@ -8,87 +8,47 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="./css/public.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css" as="style">
-    </html>
-    <title>企业站</title>
+    <script src="./js/public.js"></script>
+
+</html>
+<title>企业站</title>
 </head>
-<script>
-    // 移除显示
-    function handleClick () {
-       document.getElementById('icon').classList.remove('hidden')
-    }
-    // 添加隐藏
-    function handelClons(){
-       document.getElementById('icon').classList.add('hidden')
-    }
-</script>
 
 <body>
     <div class="relative">
         <!-- 头部导航组件 -->
         <nav id="hearder" class="header_conten w-full z-30 top-0 py-1">
-            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
-                企业站
-                <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1 " id="menu">
-                    <nav>
-                        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                            <li class="active">
-                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
-                                    href="./index.html">首页</a>
-                            </li>
-                            <li>
-                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
-                                    href="./news.html">新闻列表页</a>
-                            </li>
-                            <li>
-                                <a class="inline-block no-underline hover:text-black  py-2 px-4"
-                                    href="./personalCenter.html">关于我们</a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-                <label for="menu-toggle" class="cursor-pointer md:hidden block"  onclick="handleClick()">
-                    <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 20 20">
-                        <title>menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                    </svg>
-                </label>
-                <!-- <input class="hidden" type="checkbox" id="menu-toggle" /> -->
-               
-            </div>
         </nav>
-        <div id="icon" class="h-screen  h-2/4 w-1/2 absolute top-0 right-0 bg-black z-50 hidden">
+        <div id="icon" class="h-screen  h-2/4 w-1/2 absolute top-0 right-0 bg-black xl:hidden z-50 hidden">
             <div class="text-gray-300">
-                <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6" src="./img/close.png"/></div>
+                <div id="clons" onclick="handelClons()" class="icon flex justify-end m-4"><img class="w-6"
+                        src="./img/close.png" /></div>
                 <div class="mx-4">
                     <div class="flex flex-col-reverse divide-y divide-y-reverse divide-rose-400">
                         <a class="block leading-10 py-8" href="./news.html">新闻列表页</a>
                         <a class="block leading-10 py-8" href="./personalCenter.html">关于我们</a>
                         <a class="block leading-10 py-8 divide-y divide-yellow-500" href="./index.html">首页</a>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
         <!-- 轮播组件 -->
         <div class="banner">
-            <div class="app">
+            <div class="app" id="polling">
                 <div class="scroll">
                     <!-- 图片展示 -->
-                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg" alt="scrollImage"
-                        class="img current">
-                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.6b21c09cb3426651884be95ea5ed484a?rik=jVHUGxj8GKvvzQ&riu=http%3a%2f%2fb.zol-img.com.cn%2fdesk%2fbizhi%2fstart%2f4%2f1392980276409.jpg&ehk=aKKsCzg3qxRsMXpgwkl7Q9fY7ZmDS2XM4jJCmMQGSj0%3d&risl=&pid=ImgRaw&r=0"
+                    <img src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/8718367adab44aedd3899a8eb21c8701a08bfb91.jpg"
+                        alt="scrollImage" class="img current">
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.5c55071005fb52d9daed6cf9ea2f87e6?rik=04UqyVIo7XFBrQ&riu=http%3a%2f%2fimage.qianye88.com%2fpic%2f17f2aebb73ca5a6736d3445542f630a0&ehk=wgZ%2fwnSKRFtSNS0MWB2LjgHgh6kmVFoCqYzQyohwO9g%3d&risl=&pid=ImgRaw&r=0"
                         alt="scrollImage" class="img">
-                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_23.jpg" alt="scrollImage"
-                        class="img">
-                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_6.jpg" alt="scrollImage"
-                        class="img">
-                    <img src="https://www.keaidian.com/uploads/allimg/190424/24110307_0.jpg" alt="scrollImage"
-                        class="img">
-
-                    <!-- 左右箭头的展示 -->
-                    <div class="lf"></div>
-                    <div class="lr"></div>
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.fd13b4ad15e964c255c745d643d5d8f8?rik=JOedLB1ZTr5Usg&riu=http%3a%2f%2fimage.qianye88.com%2fpic%2f1ae77629edb165542eb101ed3ce5b2a9&ehk=w4PIyXDy%2b%2bg51Kw24tPEzS7DLxwA5vzh7h55Z2W45%2fo%3d&risl=&pid=ImgRaw&r=0"
+                        alt="scrollImage" class="img">
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.f5c8f54c6897d205ad654fb5fd1495d2?rik=jexWqQK1qIQuPw&riu=http%3a%2f%2fwww.pp3.cn%2fuploads%2f20120310bz%2f32.jpg&ehk=YQqfZIJRvpza7B4GFu9PoId20ixB%2bKZcOTsTT6Cdp6k%3d&risl=&pid=ImgRaw&r=0"
+                        alt="scrollImage" class="img">
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.1099bdddbe49fbc2eab1afa3784dfec5?rik=L%2f4L2%2fnZbusHqQ&riu=http%3a%2f%2fimage.qianye88.com%2fpic%2f1a1c9da23681c2e7c2456c623ac647b6&ehk=q%2bBuVdam3KhTR1Cq3iab88pwjsb2z7fC6wdYLBNJDIo%3d&risl=&pid=ImgRaw&r=0"
+                        alt="scrollImage" class="img">
 
                     <!-- 小圆点展示 -->
                     <div class="dots">
@@ -141,10 +101,10 @@
                     </div>
                     <div class="images xl:container xl:w-8/12 sm:w-full xl:h-full">
                         <div class="ps my-7 h-2/5">
-                            <img class="img_02 animation xl:container xl:w-1/5 xl:h-1/8 w-3/12" style="object-fit: cover;"
-                                src="./img/5F5EC72F-D2BD-4B4D-AF76-7E63A997A96B.png" alt="">
-                            <img class="img_03 animation xl:container xl:w-3/5 w-6/12 xl:h-96" style="object-fit: cover;"
-                                src="./img/DB710F41-D874-4C4C-8DE1-0C5367CB3E92.png" alt="">
+                            <img class="img_02 animation xl:container xl:w-1/5 xl:h-1/8 w-3/12"
+                                style="object-fit: cover;" src="./img/5F5EC72F-D2BD-4B4D-AF76-7E63A997A96B.png" alt="">
+                            <img class="img_03 animation xl:container xl:w-3/5 w-6/12 xl:h-96"
+                                style="object-fit: cover;" src="./img/DB710F41-D874-4C4C-8DE1-0C5367CB3E92.png" alt="">
                         </div>
                         <div class="ps1  my-7 flex">
                             <img class="img_01 animation xl:h-96 xl:w-4/6 w-3/5" style="object-fit: cover;"
@@ -178,7 +138,8 @@
                 </div>
                 <ul class="introduce_content  flex flex-wrap xl:mt-12">
                     <li class="xl:flex-1 overflow-hidden">
-                        <img  class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/BA8A5675-AFCC-420D-AF18-BA7C654F513C.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/BA8A5675-AFCC-420D-AF18-BA7C654F513C.png" alt="加载失败">
                         <div class="introduce_message">
                             <div class="introduce_message_name text-4xl mb-10">Jon Smith</div>
                             <div class="introduce_message_experience mb-5 text-xl">特级教师，从事教育工作10年</div>
@@ -186,7 +147,8 @@
                         </div>
                     </li>
                     <li class="xl:flex-1 overflow-hidden">
-                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/D7B6AEA3-EA48-4E39-9C76-2EF5303B2913.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/D7B6AEA3-EA48-4E39-9C76-2EF5303B2913.png" alt="加载失败">
                         <div class="introduce_message">
                             <div class="introduce_message_name text-4xl mb-10">Merri Bond</div>
                             <div class="introduce_message_experience mb-5 text-xl">特级教师，从事教育工作10年</div>
@@ -194,7 +156,8 @@
                         </div>
                     </li>
                     <li class="xl:flex-1 overflow-hidden">
-                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/0BC740DF-311D-46BA-83F2-8A67E8495A88.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/0BC740DF-311D-46BA-83F2-8A67E8495A88.png" alt="加载失败">
                         <div class="introduce_message">
                             <div class="introduce_message_name text-4xl mb-10">Samuel Fredman</div>
                             <div class="introduce_message_experience mb-5 text-xl">特级教师，从事教育工作10年</div>
@@ -208,11 +171,12 @@
                 <div class="news_title text-4xl xl:pt-16 xl:pb-6">
                     <div class="relative bgimg">
                         <div class="news_text xl:pt-6 pt-6 pb-6 xl:pb-6">新闻动态</div>
-                     </div>
+                    </div>
                 </div>
                 <ul class="news_content flex flex-wrap xl:mt-11 xl:pb-10 mt-4">
                     <li class="xl:w-1/6 w-2/5 overflow-hidden">
-                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/1682721B-7680-4E63-9868-775E15F62E23.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/1682721B-7680-4E63-9868-775E15F62E23.png" alt="加载失败">
                         <div class="news_content_message">
                             <div class="my-5 xl:text-xl text-base">2022百度AI大会前夕，解读百度大脑的半年“豹变”</div>
                             <div class="text-sm">
@@ -221,7 +185,8 @@
                         </div>
                     </li>
                     <li class="xl:w-1/6 w-2/5 overflow-hidden">
-                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/1D6C875E-FB08-44A8-BC3B-BB20C13667A7.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/4A37DD14-DE80-4AC6-A0C1-B3652E614800.png" alt="加载失败">
                         <div class="news_content_message">
                             <div class="my-5 xl:text-xl text-base">创投早报｜美国商业化核聚变创企获投；音乐版权公司完成融资</div>
                             <div class="text-sm">
@@ -229,7 +194,8 @@
                         </div>
                     </li>
                     <li class="xl:w-1/6 w-2/5 overflow-hidden">
-                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/7F38306A-49D7-4F63-99BB-E742A47C9333.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/7F38306A-49D7-4F63-99BB-E742A47C9333.png" alt="加载失败">
                         <div class="news_content_message">
                             <div class="my-5 xl:text-xl text-base">【千龙网】广告行业标准指导性意见将出台</div>
                             <div class="text-sm">
@@ -238,7 +204,8 @@
                         </div>
                     </li>
                     <li class="xl:w-1/6 w-2/5 overflow-hidden">
-                        <img class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110" src="./img/1E2B21D7-3ACC-4C47-B236-9C0CE8BBC52D.png" alt="加载失败">
+                        <img class="transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110"
+                            src="./img/1E2B21D7-3ACC-4C47-B236-9C0CE8BBC52D.png" alt="加载失败">
                         <div class="news_content_message">
                             <div class="my-5 xl:text-xl text-base">支持触觉反馈，Manus VR推出全新Prime VR手套</div>
                             <div class="text-sm">第三届国际印刷工业发展论坛（Forum-PI
@@ -249,23 +216,19 @@
             </div>
         </div>
         <!-- 底部 -->
-        <div class="footer">
-            <div class="footer-top md:flex flex-wrap pt-10">
-                <div class="md:w-1/4 px-4 md:text-center">地址：中国山东省青岛市市南区某某中路20号</div>
-                <div class="md:w-1/4 px-4 md:text-center">邮箱：1370XXX171@qq.com</div>
-                <div class="md:w-1/4 px-4 md:text-center">电话：0591-88888888</div>
-            </div>
-            <div class="footer-bottom flex pt-10 pb-6">
-                <div class="px-2 w-1/6 xl:w-1/3 flex justify-end"><img
-                        src="./img/911B38D2-D3A0-490A-893D-B5743077E0CD.png" alt=""></div>
-                <div class="w-5/6 xl:w-1/2">Copyright © 2009 - 2022 Cld , All Rights Reserved 某某网络科技有限公司 版权所有
-                    陕ICP备xxxxxxx号</div>
-            </div>
+        <div class="footer" id="footer">
         </div>
     </div>
-    <!-- <script src="./js/swiper.min.js"></script> -->
     <script src="./js/anime.min.js"></script>
     <script src="./js/index.js"></script>
+    <script>
+        window.onload = () => {
+            const domHeader = document.getElementById('hearder')
+            domHeader.innerHTML = header('index')
+            const domFooter = document.getElementById('footer')
+            domFooter.innerHTML = footer()
+        }
+    </script>
 </body>
 
 </html>

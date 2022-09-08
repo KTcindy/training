@@ -26,7 +26,7 @@
     line-height: 28px;
     border: none;
     margin: 0 5px;
-    background-color: #f4f4f5;
+    /* background-color: #f4f4f5; */
     color: #606266;
     min-width: 30px;
     border-radius: 2px;
@@ -38,12 +38,11 @@
 }
 
 #pagenation li:hover {
-    color: #409EFF;
+    color: #FF350D;
 }
 
 #pagenation .number.active_page {
-    background-color: #409EFF;
-    color: #fff;
+    color:#FF350D;
     cursor: default;
 }
 

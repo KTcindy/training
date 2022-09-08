@@ -1,12 +1,26 @@
+/**
+     * constructor{
+     *  @wrap：容器
+     *  @page:默认初始页
+     *  @size:默认页面固定条数
+     *  @total:默认总条数
+     *  @pages:默认总页数
+     *  @callback:默认回调函数
+     *  @quickPages:默认快速翻页的页数
+     *  @init:初始化
+     * }
+ 
+ */
+
 class Pagenation {
     constructor(obj) {
-        this.wrap = obj.wrap; //容器
-        this.page = obj.page || 1; //默认初始页
-        this.size = obj.size || 8; //默认页面固定条数
-        this.total = obj.total || 0; //默认总条数
-        this.pages = Math.ceil(this.total / this.size); //默认总页数
-        this.callback = obj.callback; //默认回调函数
-        this.quickPages = 5; //默认快速翻页的页数
+        this.wrap = obj.wrap; 
+        this.page = obj.page || 1; 
+        this.size = obj.size || 8; 
+        this.total = obj.total || 0; 
+        this.pages = Math.ceil(this.total / this.size); 
+        this.callback = obj.callback; 
+        this.quickPages = 5; 
         this.interval = obj.interval ? (obj.interval < 3 ? obj.interval : 4) : 4; //默认间隔的数字是4+1=5个
         this.init(); //初始化
     }
@@ -35,7 +49,7 @@ class Pagenation {
         for (let i = 0, len = numbers.length; i < len; i++) {
             numbers[i].onclick = function () { //数字按钮点击事件
                 if (_this.page != this.innerText) {
-                    console.log(_this.page, this.innerText)
+                    // console.log(_this.page, this.innerText)
                     _this.page = Number(this.innerText);
                     _this.init();
                     _this.callback(_this.page); //按钮事件回调函数
@@ -142,7 +156,7 @@ class Pagenation {
         num.classList.add('number');
         num.innerText = i;
         if(i === this.page) {
-                 num.classList.add('active_page');
+            num.classList.add('active_page');
         }
         return num;
     };

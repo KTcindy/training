@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.0/css/all.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- babel是解析JSX必备的库 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="./https.js"></script>
+    <title>react非工程化</title>
+    <style>
+        .cursor {
+            cursor: pointer
+        }
+
+        .active {
+            color: #F87171;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel" data-type="module">
+        const URL = "/search/repositories";
+        // loading 组件
+        function LoadEffect () {
+            return (
+                <div className="loadEffect">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            )
+        }
+        class List extends React.Component {
+            render () {
+                let { list, flag } = this.props
+                const loading = '加载中。。。。。。'
+                if (flag) {
+                    return (
+                        <div className="w-4/5 m-auto">
+                            <ul className="flex  flex-wrap justify-center" >
+                                {
+                                    list.map((item, index) => {
+                                        return <li key={item.id + index} className="w-1/5 p-4 flex justify-center m-2 bg-gray-300  flex-col items-center">
+                                            <div>
+                                                <h1 className="text-center">{'#' + (index + 1) * 1}</h1>
+                                                <img className="m-auto" width="120px" src={item.owner.avatar_url} />
+                                                <div className="text-center text-red-300 text-base">{item.name}</div>
+                                                <p className="text-sm"><i className="fa fa-user mx-1" style={{ color: 'rgb(255, 191, 116)' }}></i>{item.name}</p>
+                                                <p className="text-sm"><i className="fa fa-star mx-1" style={{ color: 'rgb(255, 215, 0)' }}></i>{item.stargazers_count} &nbsp; stars</p>
+                                                <p className="text-sm"><i className="fa fa-code-fork mx-1" style={{ color: 'rgb(129, 195, 245)' }}></i>{item.forks} &nbsp; forks</p>
+                                                <p className="text-sm"><i className="fa fa-warning mx-1" style={{ color: 'rgb(241, 138, 147)' }}></i>{item.open_issues} &nbsp; Open issues</p>
+                                            </div>
+                                        </li>
+                                    })
+                                }
+                            </ul>
+                            <div className="loading text-center flex"><LoadEffect /></div>
+                        </div>
+                    )
+                } else {
+                    return <div className="loading text-center flex"><LoadEffect /></div>
+                }
+            }
+
+        }
+        /*
+            * flag:判断数据是否加载完毕 
+            * titleList:tab数据源
+            * list: 列表数据源
+            * active: 当前激活项
+            * ajaxData:请求参数
+        */
+        class AppDemo extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    flag: false,
+                    loading: true,
+                    titleList: ['All', 'Javascript', 'Ruby', 'Java', 'Css', 'Python'],
+                    list: [],
+                    active: 'All',
+                    ajaxData: {
+                        q: 'stars:>1',
+                        sort: 'stars',
+                        order: 'desc',
+                        type: 'Repositories',
+                        page: 1
+                    },
+
+                }
+            };
+            myRef = React.createRef();
+            // 滚动触发事件
+            handleScroll = () => {
+                let res = this.myRef.current.scrollHeight - this.myRef.current.clientHeight - this.myRef.current.scrollTop;
+                if (!res) {
+                    this.setState(prevstate => ({
+                        ajaxData: {
+                            ...prevstate.ajaxData,
+                            page: ++prevstate.ajaxData.page
+                        }
+                    }), () => {
+                        this.init()
+                    })
+                }
+            }
+
+            componentDidMount () {
+                this.init()
+            }
+
+
+            // 初始化方法
+            init = () => {
+                let { list } = this.state
+                baseFetch(URL, this.state.ajaxData).then(res => {
+                    let lists = list.concat(res.items)
+                    this.setState({ list: lists })
+                    this.setState({ flag: true })
+                }).catch(err => {
+                    alert('请求太频繁了')
+                })
+
+
+            }
+            // 点击tab切换类型
+            clickActive = (item) => {
+                this.setState({ list: [] })
+                this.setState({ flag: false });
+                this.setState({ active: item });
+                let { q } = this.state.ajaxData
+                let _q = `stars:>1 language:${item}`
+                let _ajaxData = { ...this.state.ajaxData, q: _q }
+                this.setState({ ajaxData: _ajaxData }, () => {
+                    this.init()
+                })
+
+            }
+            render () {
+                let { titleList, list, active, flag } = this.state
+                return (
+                    <div>
+                        <ul className="flex m-auto justify-center w-1/2">
+                            {
+                                titleList.map(item => {
+                                    return <li className={['p-4', 'cursor', active === item ? 'active' : ''].join(' ')} onClick={this.clickActive.bind(this, item)} key={item}>{item}</li>
+                                })
+                            }
+                        </ul>
+                        <div style={{ height: 'calc(100vh - 120px)' }} className="overflow-x-hidden overflow-y-auto" ref={this.myRef} onScroll={() => this.handleScroll()}>
+                            <List list={list} flag={flag} />
+                        </div>
+
+                    </div>
+                )
+
+            }
+        }
+        ReactDOM.render(
+            <AppDemo />,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+
+</html>

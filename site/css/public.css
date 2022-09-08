@@ -14,7 +14,7 @@ body,a {
 }
 
 .header_conten {
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
     height: 65px;
@@ -22,15 +22,15 @@ body,a {
     align-items: center;
     justify-content: center;
     transition: background-color .5s ease;
-    z-index: 99;
+    z-index: 10;
     box-sizing: border-box;
     width: 100%;
     padding: 0 15px;
-    background-color: transparent;
     background: #252429;
     overflow-y: hidden;
     /* opacity: 0.8; */
-    color:var(--color)
+    color:var(--color);
+    background-color: rgba(0,0,0,.85);
 }
 .active {
     position: relative;

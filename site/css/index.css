@@ -13,8 +13,6 @@
     position: relative;
     display: inline-block;
     width: 100%;
-    /* width: 1226px; */
-    /* height: 460px; */
 }
 
 .app .scroll .img {
@@ -25,33 +23,7 @@
 
 .app .scroll .current {
     display: block;
-}
-
-.scroll .lf {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    /* background-image: url('https://cn.bing.com/rp/2d9PT4vq6Wgwkp7HP8R-0W7C1K0.svg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 69px;
-    height: 69px;
-    cursor: pointer;
-    transform: translateY(-50%);
-}
-
-.scroll .lr {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    /* background-image: url('https://cn.bing.com/rp/R1dUsywBSe_0cXxtsfENVYupgkY.svg'); */
-    /* background-position:no-re; */
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 69px;
-    height: 69px;
-    cursor: pointer;
-    transform: translateY(-50%);
+    transition-duration: 1s;
 }
 
 .dots {
@@ -74,8 +46,7 @@
 
 .path-loop-bg {
     fill: none;
-    stroke: rgba(0, 0, 0, .85);
-    ;
+    stroke: rgb(241 241 241);
     stroke-miterlimit: 10;
     stroke-width: 4px;
     opacity: 0.1;
@@ -285,18 +256,7 @@
     background-size: 50%;
     background-position: 50%;
 }
-/* .introduce::after{
-    content: ' ';
-    width: 200px;
-    height: 100%;
-    left: 50%;
-    transform: translate(-50%);
-    top: 0;
-    
-} */
-
 .title_text {
-    /* position: relative; */
     animation: textIn .5s both;
 }
 
@@ -423,7 +383,7 @@
     top: 0px;
     left: 0;
     opacity: .1;
-    font-size: 70px;
+    font-size: 6rem;
 }
 
 .news .news_content {
