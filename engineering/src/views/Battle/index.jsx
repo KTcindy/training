@@ -50,12 +50,12 @@ export default class Battle extends Component {
         history.push({ pathname: `/Result/${oneName}/${twoName}`})   
     }
     // 对数据进行校验
-    static propTypes.shape =({
+    static propTypes ={
         oneName: PropTypes.string.isRequired,
         twoName: PropTypes.string.isRequired,
         oneNameflag: PropTypes.bool,
         twoNameflag:PropTypes.bool
-      })
+      }
     render () {
         let { oneName, twoName, oneNameflag, twoNameflag } = this.props.battleObject
         return (
