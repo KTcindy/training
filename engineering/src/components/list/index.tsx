@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LazyLoad from 'react-lazyload';
 
 import './index.css'
+
 // loading 组件
 function LoadEffect () {
     return (
@@ -17,7 +18,8 @@ function LoadEffect () {
         </div>
     )
 }
-export default class List extends Component {
+
+export default class List extends Component<Record<string, any>> {
     render () {
         let { list, flag } = this.props
         const loading = '加载中。。。。。。'

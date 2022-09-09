@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import List from '@/components/list/index.jsx'
+import List from '@/components/list/index'
 import baseFetch from '../../utils/require'
 import './index.css'
 export default class AppDemo extends Component {
