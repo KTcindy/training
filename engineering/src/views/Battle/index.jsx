@@ -35,7 +35,6 @@ export default class Battle extends Component {
     }
     // add
     handleAdd = (key) => {
-        let { battleObject } = this.props
         let obj = { [key + 'flag']: true }
         this.props.addBattle({ ...obj })
     }
@@ -51,8 +50,8 @@ export default class Battle extends Component {
     }
     // 对数据进行校验
     static propTypes ={
-        oneName: PropTypes.string.isRequired,
-        twoName: PropTypes.string.isRequired,
+        oneName: PropTypes.string,
+        twoName: PropTypes.string,
         oneNameflag: PropTypes.bool,
         twoNameflag:PropTypes.bool
       }

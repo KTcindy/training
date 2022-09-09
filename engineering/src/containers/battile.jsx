@@ -5,7 +5,7 @@ import { addBattle, delBattle } from '../redux/active/battle.js'
 export default connect(
     state => ({ battleObject: state.battle }),
     {
-        addBattle: addBattle,
-        delBattle: delBattle
+        addBattle,
+        delBattle
     }
 )(PattleUi)

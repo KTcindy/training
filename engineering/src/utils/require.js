@@ -35,6 +35,9 @@ export default function baseFetch (path, data = {}) {
                 case 404:
                     alert('请求超时！')
                     window.history.back()
+                case 403:
+                    alert('请求太频繁了')
+                    location.reload();
                 default:
                     return response.json()
             }

@@ -1,6 +1,6 @@
 
 const webpack = require('webpack');
-// const TerserPlugin = require('terser-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path');
 function resolve (dir) {
     //设置绝对路径
@@ -51,25 +51,20 @@ module.exports = {
         // 热更新配置
         new webpack.HotModuleReplacementPlugin()
     ],
-    // webpack5 自带的optimization配置 还有问题
-    // optimization:{
-    //     minimize: true, // 可省略，默认最优配置：生产环境，压缩 true。开发环境，不压缩 false
-    //     minimizer: [
-    //         new TerserPlugin({
-    //                   test: /\.js(\?.*)?$/i,  //用来匹配需要压缩的文件。通常可以配置min.js来过滤一些已经压缩过的js文件避免重复压缩导致问题
-    //                 //   include: undefined, //正则表达式，匹配参与压缩的文件。
-    //                 //   exclude: undefined, //正则表达式，匹配不需要压缩的文件
-    //                   parallel: true, //使用多进程并发运行以提高构建速度。 并发运行的默认数量： os.cpus().length - 1 。
-    //                   minify: false, //允许你自定义压缩函数。 默认情况下，插件使用 terser 库。 对于使用和测试未发布的版本或 fork 的代码很帮助。
-      
-    //           terserOptions: {
-    //                 toplevel: true, // 最高级别，删除无用代码
-    //                 ie8: true, //允许浏览器内核
-    //                 safari10: true,
-    //             }
-    //         })
-    //     ]
-    // },
+    // webpack5 自带的optimization
+    optimization:{
+        minimize: true, // 可省略，默认最优配置：生产环境，压缩 true。开发环境，不压缩 false
+        minimizer: [new TerserPlugin({
+            terserOptions: {
+                mangle: true, 
+                compress: {
+                    drop_console: true,//传true就是干掉所有的console.*这些函数的调用.
+                    drop_debugger: true, //干掉那些debugger;
+                    pure_funcs: ['console.log'] // 如果你要干掉特定的函数比如console.info
+                }
+            }
+        })],
+    },
     // 热更新配置 级 路由响应
     devServer: {
         hot: true,

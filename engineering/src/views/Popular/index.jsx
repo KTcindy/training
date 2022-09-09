@@ -37,10 +37,7 @@ export default class AppDemo extends Component {
         }
     }
 
-    componentDidMount () {
-        this.init()
-    }
-
+    componentDidMount =()=> this.init()
 
     // 初始化方法
     init = () => {
@@ -50,7 +47,7 @@ export default class AppDemo extends Component {
             this.setState({ list: lists })
             this.setState({ flag: true })
         }).catch(err => {
-            alert('请求太频繁了')
+            console.log(err)
         })
 
 
