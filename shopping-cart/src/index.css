@@ -1,0 +1,51 @@
+@import '~antd/dist/antd.css';
+@import '../src/assets/css/index.css';
+body,p {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hcyKTa {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.hcyKTa label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  width: 35px;
+  height: 35px;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  line-height: 35px;
+  text-align: center;
+}
+.hcyKTa label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.hcyKTa label .checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 35px;
+  height: 35px;
+  font-size: 0.8em;
+  border-radius: 50%;
+  box-sizing: border-box;
+  line-height: 35px;
+  text-align: center;
+  color: rgb(27, 26, 32);
+  background-color: rgb(236, 236, 236);
+  border: 1px solid transparent;
+}
+.hcyKTa label input:checked ~ .checkmark {
+  background-color: rgb(27, 26, 32);
+  color: rgb(236, 236, 236);
+}

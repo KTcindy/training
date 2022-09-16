@@ -119,9 +119,7 @@
                 }
             }
 
-            componentDidMount () {
-                this.init()
-            }
+            componentDidMount =()=>this.init()
 
 
             // 初始化方法
@@ -139,9 +137,7 @@
             }
             // 点击tab切换类型
             clickActive = (item) => {
-                this.setState({ list: [] })
-                this.setState({ flag: false });
-                this.setState({ active: item });
+                this.setState({ list: [],flag: false,active: item})
                 let { q } = this.state.ajaxData
                 let _q = `stars:>1 language:${item}`
                 let _ajaxData = { ...this.state.ajaxData, q: _q }

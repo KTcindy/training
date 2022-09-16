@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import List from '@/components/list/index.jsx'
+// import listCopy from '../../components/list/index'
 import baseFetch from '../../utils/require'
 import './index.css'
 export default class AppDemo extends Component {
@@ -44,8 +45,7 @@ export default class AppDemo extends Component {
         let { list } = this.state
         baseFetch(this.URL, this.state.ajaxData).then(res => {
             let lists = list.concat(res.items)
-            this.setState({ list: lists })
-            this.setState({ flag: true })
+            this.setState({ list: lists,flag: true })
         }).catch(err => {
             console.log(err)
         })
@@ -54,13 +54,11 @@ export default class AppDemo extends Component {
     }
     // 点击tab切换类型
     clickActive = (item) => {
-        this.setState({ list: [] })
-        this.setState({ flag: false });
-        this.setState({ active: item });
+        this.setState({ list: [],flag: false, active: item })
         let { q } = this.state.ajaxData
         let _q = `stars:>1 language:${item}`
         let _ajaxData = { ...this.state.ajaxData, q: _q }
-        this.setState({ ajaxData: _ajaxData }, () => {
+        this.setState({ ajaxData: _ajaxData }, () =>{
             this.init()
         })
 

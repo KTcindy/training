@@ -23,11 +23,11 @@ export default class List extends Component {
         const loading = '加载中。。。。。。'
         if (flag) {
             return (
-                <div className="w-4/5 m-auto">
+                <div className="xl:w-4/5 xl:m-auto">
                     <ul className="flex  flex-wrap justify-center" >
                         {
                             list.map((item, index) => {
-                                return <li key={item.id + index} className="w-1/5 p-4 flex justify-center m-2 bg-gray-300  flex-col items-center">
+                                return <li key={item.id + index} className="xl:w-1/5 w-2/5 p-4 flex justify-center m-2 bg-gray-300  flex-col items-center">
                                     <div>
                                         <h1 className="text-center">{'#' + (index + 1) * 1}</h1>
                                         <LazyLoad

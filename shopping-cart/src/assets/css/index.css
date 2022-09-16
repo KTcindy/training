@@ -1,0 +1,64 @@
+.bgimg {
+    text-decoration: none;
+    display: block;
+    width:100%;
+    height: 320px;
+    /* background-image: url('../products/8552515751438644-1-product.webp'); */
+    /* backgroundImage: `url('../assets/products/${item.sku}-1-product.webp')`  */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.bHJSNa{
+    position: absolute;
+    color: rgb(236, 236, 236);
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+    font-size: 0.6em;
+    background-color: rgb(27, 26, 32);
+    cursor: default;
+    z-index: 1;
+}
+.eeXMBo{
+    position: relative;
+    height: 50px;
+    padding: 0px 20px;
+}
+.eeXMBo::after{
+    position: absolute;
+    content: " ";
+    width: 20px;
+    height: 2px;
+    background-color: rgb(234, 191, 0);
+    bottom: 0px;
+    left: 50%;
+    margin-left: -10px;
+    z-index:2
+}
+.kIYxbn {
+    margin: 0px;
+    color: rgb(156, 155, 155);
+}
+.icon{
+    cursor: pointer;
+}
+.h::-webkit-scrollbar {
+    appearance: none;
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+.h::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(12, 11, 16);
+}
+.h{
+    height: calc(100% - 360px);
+}
+.transform{
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%);
+}

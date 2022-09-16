@@ -68,7 +68,7 @@ module.exports = {
     // 热更新配置 级 路由响应
     devServer: {
         hot: true,
-        historyApiFallback:true
+        historyApiFallback: true
     },
     // 配置文件别名
     resolve: {
