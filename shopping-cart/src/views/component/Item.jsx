@@ -31,7 +31,7 @@ export default class Item extends Component {
                 </div>
                 <p className="eeXMBo text-center mt-2 text-base">{item.title}</p>
                 <div className="fTQxRg text-center">
-                    <p className="ljgnQL m-0">
+                    <p className="ljgnQL  my-2">
                         <small>{item.currencyFormat}</small>
                         <b className='text-lg'>{this.filter(item.price, 0)}</b>
                         <span>.{this.filter(item.price, 1)}</span>
@@ -43,7 +43,7 @@ export default class Item extends Component {
                         </p>
                     }
                 </div>
-                <Button type={flag == 2 ? 'primary' : ''} className='mt-2' block size='large' onClick={()=>this.props.add(item)}>
+                <Button type={flag === 2 ? 'primary' : ''} className='mt-2' block size='large' onClick={()=>this.props.add(item)}>
                     Add to cart
                 </Button>
             </div>
