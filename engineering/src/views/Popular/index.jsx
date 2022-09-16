@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ListItem from '@/components/list/index.jsx'
 // engineering/src/components/list/index.jsx
 import baseFetch from '@/utils/require'
-import "./index.css"
+import './index.css'
 export default class AppDemo extends Component {
   constructor() {
     super()
