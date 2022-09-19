@@ -1,18 +1,36 @@
 import React, { Component } from 'react'
+import {connect} from 'dva'
 import List from './views/List.jsx'
 import Sizes from './views/Sizes.jsx'
 import Settlement from './views/Settlement'
 import Icon from './assets/products/che.png'
 
-export default class App extends Component {
+ class App extends Component {
   state = {
     flag: 'hidden'
   }
   numTotal = () => {
-    let { checks } = this.props;
+    let { checks } = this.props.checks;
     return checks.reduce((c, r) => ~~c + r.num,0)
   }
-  showModel = (e) => this.setState({ flag: e })
+   componentDidMount () {
+     let checks =JSON.parse(localStorage.getItem('checks'))
+     if (checks.length) {
+      let { dispatch } = this.props
+       dispatch({ type: 'cart/add', check: { checks, type: 'loc' } })
+     }
+    window.addEventListener('beforeunload', this.beforeUnload);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.beforeUnload);
+  }
+  beforeUnload = e => {
+    e.preventDefault();
+    let {checks}=this.props.checks
+    localStorage.setItem('checks',JSON.stringify(checks))
+  };
+
+   showModel = (e) => this.setState({ flag: e })
   render () {
     let { flag } = this.state
     return (
@@ -26,7 +44,7 @@ export default class App extends Component {
             height={50}
             src={Icon}
           />
-          <div className='absolute bg-yellow-400 text-center rounded-2xl bottom-0  right-0' style={{width:'24px',height:'24px'}}>{this.numTotal()}</div>
+          <div className='absolute bg-yellow-400 text-center rounded-2xl bottom-0  right-0' style={{ width: '24px', height: '24px' }}>{this.numTotal()}</div>
         </div>
         <div className={[flag]}>
           <Settlement showModel={this.showModel} />
@@ -34,4 +52,10 @@ export default class App extends Component {
       </div>
     )
   }
-}
+ }
+function mapState (params) {
+  return {
+    checks:params.cart
+   }
+ }
+export default connect(mapState)(App)

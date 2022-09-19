@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { checkSize } from '../redux/active/index'
-class Sizes extends Component {
+import { connect } from 'dva'
+// import { checkSize } from '../redux/active/index'
+ class Sizes extends Component {
   state = {
     optionsWithDisabled: [
       {
@@ -47,9 +47,10 @@ class Sizes extends Component {
       if (item.value === value) item.checked = e.target.checked
       return item
     })
-    this.setState({ optionsWithDisabled: arr }, () => {
+    this.setState({ optionsWithDisabled: arr }, async() => {
+     await this.props.dispatch({type: 'list/initList'})
       let checks = arr.map(item => item.checked && item.value).filter(item => item)
-      this.props.checkSize(checks)
+      this.props.dispatch({type:'list/filterSize',checks})
     })
   }
   render () {
@@ -77,8 +78,5 @@ class Sizes extends Component {
   }
 }
 export default connect(
-  state => ({ checks: state.sizeReducers }),
-  dispatch => ({
-    checkSize: (arr) => dispatch(checkSize(arr))
-  })
+  state => state.list,
 )(Sizes)
