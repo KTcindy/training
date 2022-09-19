@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack server --open --mode development",
     "build": "webpack --mode production",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "env": {

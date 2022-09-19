@@ -17,7 +17,6 @@ function listReducers (perState = initList, active) {
     const { type, data } = active;
     switch (type) {
         case LIST:
-            
             return [...data]
         default:
             return perState

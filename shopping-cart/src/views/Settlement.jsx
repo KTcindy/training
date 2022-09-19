@@ -6,7 +6,6 @@ import Icon from '../assets/products/che.png'
 import CheckItem from './component/CheckItem';
 import Submit from './component/Submit';
 import { delInit, editInit, addInit } from '../redux/active/index'
-import { quchong } from '../views/utils'
 class Settlement extends Component {
     sumTotal = () => {
         let { checks } = this.props;

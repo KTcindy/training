@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import Item from './component/Item'
 import { connect } from 'react-redux'
+import {  Radio } from 'antd';
 import { asyncInitList, addInit } from '../redux/active/index'
 import { uniqueFunc } from '../views/utils'
 class List extends Component {
   state = {
-    flag: 1
+    flag: 1,
+    sort: void 0,
+    list:[]
   }
   //寻找匹配型号
   include = () => {
@@ -39,12 +42,32 @@ class List extends Component {
       addChe([item])
     }
   }
+  //排序
+  sort = (sort) => {
+    let { lists } = this.props
+    let { value } = sort.target
+    if (value === 'asc') {
+      lists.sort((a, b) =>  a.price - b.price )
+    }
+    if (value === 'desc') {
+      lists.sort((a,b)=> b.price-a.price)
+    }
+  }
   componentDidMount = () => this.props.initList()
   render () {
     let { lists } = this.include()
     return (
       <div className='xl:w-2/4 p-4'>
-        <div className='py-3 text-base'>{lists.length} Product(s) found</div>
+        <div className='flex items-center justify-between px-1'>
+          <div className='py-3 xl:w-3/12 text-base'>{lists.length} Product(s) found</div>
+          <div className='flex items-center'>
+            <p className='mr-2'>Order by</p>
+            <Radio.Group buttonStyle="solid" onChange={(e)=>this.sort(e)}>
+                  <Radio.Button value='asc'>升序</Radio.Button>
+                  <Radio.Button value='desc'>降序</Radio.Button>
+            </Radio.Group>
+          </div>
+        </div>
         <div className='flex flex-wrap'>
           {
             lists?.map(item => {
