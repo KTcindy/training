@@ -15,9 +15,9 @@ const cart = {
         add ({ checks }, { check }) {
             if (Object.is(check.type, 'loc')) {
                 return {
-                    checks:check.checks
+                    checks: check.checks
                 }
-            }else if (checks.length) {
+            } else if (checks.length) {
                 let newKey = checks.findIndex(i => i.id === check.id)
                 if (newKey === -1) {
                     check['num'] = 1
@@ -25,37 +25,48 @@ const cart = {
                 } else {
                     checks[newKey]['num']++
                 }
-                return {checks:checks }
+                return { checks: checks }
             } else {
                 check['num'] = 1
                 return {
-                    checks:[check]
+                    checks: [check]
                 }
             }
-            
+
         },
         // 删除
-        del ({checks},{data}) {
+        del ({ checks }, { data }) {
             let index = checks.findIndex(i => i.id === data.item.id)
-                if (data.type === 'all') {
-                    let newArr = checks.filter(v => v.id !== data.item.id)
-                    return {
-                        checks: newArr
-                    }
+            if (data.type === 'all') {
+                let newArr = checks.filter(v => v.id !== data.item.id)
+                return {
+                    checks: newArr
                 }
-                if (data.type === 'delNum') {
-                    checks[index].num--
-                    return {
-                        checks:checks
-                    }
+            }
+            if (data.type === 'delNum') {
+                checks[index].num--
+                return {
+                    checks: checks
                 }
-                if (data.type === 'addNum') {
-                    checks[index].num++
-                    return {
-                        checks:checks
-                    }
+            }
+            if (data.type === 'addNum') {
+                checks[index].num++
+                return {
+                    checks: checks
                 }
-        }
+            }
+        },
+        save (state, data) {
+            return { checks: data?.data || []};
+        },
     },
+    subscriptions: {
+        setChecks ({ dispatch, history }) { 
+            history.listen(location => {
+               let local=JSON.parse(localStorage.getItem('checks'))
+                dispatch({ type: "save",data:local })
+            });
+        },
+    }
 }
 export default cart

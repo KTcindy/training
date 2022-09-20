@@ -14,11 +14,6 @@ import Icon from './assets/products/che.png'
     return checks.reduce((c, r) => ~~c + r.num,0)
   }
    componentDidMount () {
-     let checks =JSON.parse(localStorage.getItem('checks'))
-     if (checks.length) {
-      let { dispatch } = this.props
-       dispatch({ type: 'cart/add', check: { checks, type: 'loc' } })
-     }
     window.addEventListener('beforeunload', this.beforeUnload);
   }
   componentWillUnmount() {
